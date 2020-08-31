@@ -104,7 +104,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/getStartedBtn"
+        android:id="@+id/leagueNextBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -112,6 +112,7 @@
         android:layout_marginBottom="24dp"
         android:background="@drawable/swoosh_button"
         android:fontFamily="@font/montserrat"
+        android:onClick="leagueNextClicked"
         android:text="@string/next"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
