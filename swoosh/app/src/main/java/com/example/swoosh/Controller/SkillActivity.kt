@@ -17,11 +17,23 @@ class SkillActivity : BaseActivity() {
     var skill = ""
     lateinit var player : Player //since initilizing later use lateinit
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(EXTRA_PLAYER, this.player)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
 //        league = intent.getStringExtra(EXTRA_LEAUGE).toString()
         player = intent.getParcelableExtra(EXTRA_PLAYER)!!
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if (savedInstanceState != null) {
+            player = savedInstanceState.getParcelable<Player>(EXTRA_PLAYER)!!
+        }
     }
 
     fun onBeginnerClicked(view: View) {
