@@ -51,8 +51,8 @@ class SkillActivity : BaseActivity() {
     }
 
     fun onSkillFinishClicked(view: View) = if (player.skill != "" ) {
-//  fun onSkillFinishClicked(view: View) = if (onView(withId(R.id.ballerSkillBtn)).check(matches(isNotChecked()))
-//    && onView(withId(R.id.beginnerSkillBtn)).check(matches(isNotChecked()))) {
+//  fun onSkillFinishClicked(view: View) = if (onView(withId(R.id.ballerSkillBtn)).check(matches(isChecked()))
+//    || onView(withId(R.id.beginnerSkillBtn)).check(matches(isChecked()))) {
         val finishActivity = Intent(this, FinishActivity::class.java)
 //        finishActivity.putExtra(EXTRA_LEAUGE, league)
 //        finishActivity.putExtra(EXTRA_SKILL, skill)
