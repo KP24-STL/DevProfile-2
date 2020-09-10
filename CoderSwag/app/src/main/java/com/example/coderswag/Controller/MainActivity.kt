@@ -18,14 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //this is code that transform the list view to display image and categories
-//        adapter = ArrayAdapter(this,
-//            android.R.layout.simple_list_item_1,
-//            DataService.categories)
-//        categoryListView.adapter = adapter
 
         adapter = CategoryAdapter(this, DataService.categories)
-
-//        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, DataService.categories)
         categoryListView.adapter = adapter
+
+
     }
 }
