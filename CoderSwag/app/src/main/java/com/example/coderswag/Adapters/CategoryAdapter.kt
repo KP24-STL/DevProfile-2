@@ -10,26 +10,24 @@ import android.widget.TextView
 import com.example.coderswag.Model.Category
 import com.example.coderswag.R
 
-class CategoryAdapter(context: Context, categories: List<Category>) : BaseAdapter() {
+//baseAdapter is adapter that all other adapters inherit from
+//add context and correct adapter data package to work with (com.example.coderswag.Model was used here)
+class CategoryAdapter(val context: Context, val categories: List<Category>) : BaseAdapter() {
 
-    val context = context
-    val categories = categories
-
+    //    every adapter that inherits from baseAdapter needs these 4 methods (getView, getItem, getItemId, getCount)
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val categoryView: View
         val holder : ViewHolder
-
+//   conditional is if this is first time to see the layout, then go thru inflater process. if not, run else statement and recycle the views into the holder.
         if (convertView == null) {
             categoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item, null)
             holder = ViewHolder()
             holder.categoryImage = categoryView.findViewById(R.id.categoryImage)
             holder.categoryName = categoryView.findViewById(R.id.categoryName)
-            println("I exist for the 1st time")
             categoryView.tag = holder
         } else {
             holder = convertView.tag as ViewHolder
             categoryView = convertView
-            println("Go green, recycle")
         }
 
         val category = categories[position]
@@ -39,19 +37,19 @@ class CategoryAdapter(context: Context, categories: List<Category>) : BaseAdapte
         holder.categoryName?.text = category.title
         return categoryView
     }
-
+//  method used to retrieve info from a particular location of the listView
     override fun getItem(position: Int): Any {
         return categories[position]
     }
-
+//  isnt used, so set to return 0. it defines a unique ID for each row.
     override fun getItemId(position: Int): Long {
         return 0
     }
-
+// this is telling how many rows it will be displaying in the categories array
     override fun getCount(): Int {
         return categories.count()
     }
-
+// will hold a reference to the category image and category name. this way only the displayed views are called and are active.
     private class ViewHolder {
         var categoryImage: ImageView? = null
         var categoryName: TextView? = null

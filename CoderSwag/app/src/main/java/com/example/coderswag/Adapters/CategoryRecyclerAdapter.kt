@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.coderswag.Model.Category
 import com.example.coderswag.R
 
+//  extending RecyclerView.adapter instead of BaseAdapter. shown at the end of code line  : RecyclerView.Adapter
 class CategoryRecyclerAdapter(val context: Context, val categories: List<Category>, val itemClick: (Category) -> Unit) : RecyclerView.Adapter<CategoryRecyclerAdapter.Holder>()  {
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
@@ -21,7 +22,8 @@ class CategoryRecyclerAdapter(val context: Context, val categories: List<Categor
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(context).inflate(R.layout.category_list_item, parent, false)
+        val view = LayoutInflater.from(context)
+            .inflate(R.layout.category_list_item, parent, false)
         return Holder(view, itemClick)
     }
 

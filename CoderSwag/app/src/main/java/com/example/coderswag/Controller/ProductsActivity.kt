@@ -1,5 +1,6 @@
 package com.example.coderswag.Controller
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import com.example.coderswag.Adapters.ProductsAdapter
 import com.example.coderswag.R
 import com.example.coderswag.Services.DataService
 import com.example.coderswag.Utilities.EXTRA_CATEGORY
+import com.example.coderswag.Utilities.EXTRA_PRODUCT
 import kotlinx.android.synthetic.main.activity_products.*
 
 class ProductsActivity : AppCompatActivity() {
@@ -20,7 +22,12 @@ class ProductsActivity : AppCompatActivity() {
 
         intent.getStringExtra(EXTRA_CATEGORY)
         val categoryType = intent.getStringExtra(EXTRA_CATEGORY)
-        adapter = ProductsAdapter(this, DataService.getProducts(categoryType))
+
+        adapter = ProductsAdapter(this, DataService.getProducts(categoryType)) {product ->
+            val productDetailIntent = Intent(this, ProductDetailActivity::class.java)
+            productDetailIntent.putExtra(EXTRA_PRODUCT, product)
+            startActivity(productDetailIntent)
+        }
 
         var spanCount = 2
         val orientation = resources.configuration.orientation
@@ -41,6 +48,8 @@ class ProductsActivity : AppCompatActivity() {
 
         val layoutManager = GridLayoutManager(this, spanCount)
         productsListView.layoutManager = layoutManager
-        productsListView.adapter = adapter
+        productsListView.adapter = adapter       //this sets the adapter
+
+
     }
 }
