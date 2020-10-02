@@ -2,6 +2,7 @@ package com.example.smack
 
 import android.app.Activity
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.drawerlayout.widget.DrawerLayout
@@ -46,4 +47,17 @@ class MainActivity : AppCompatActivity() {
         super.onBackPressed()
         }
     }
+
+    fun loginBtnNavClicked(view: View) {  //create this click listener function for a clickable button. Use onClick name as method name.
+
+    }
+
+    fun addChannelClicked(view: View) {
+
+    }
+
+    fun sendMsgBtnClicked(view: View) {
+        
+    }
+
 }
