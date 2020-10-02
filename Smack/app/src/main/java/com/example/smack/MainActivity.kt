@@ -1,6 +1,7 @@
 package com.example.smack
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -49,7 +50,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loginBtnNavClicked(view: View) {  //create this click listener function for a clickable button. Use onClick name as method name.
-
+        val loginIntent = Intent(this, Loginactivity::class.java)
+        startActivity(loginIntent)
     }
 
     fun addChannelClicked(view: View) {
@@ -57,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendMsgBtnClicked(view: View) {
-        
+
     }
 
 }
