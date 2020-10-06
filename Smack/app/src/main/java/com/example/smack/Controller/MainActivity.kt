@@ -1,15 +1,15 @@
-package com.example.smack
+package com.example.smack.Controller
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import com.example.smack.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 

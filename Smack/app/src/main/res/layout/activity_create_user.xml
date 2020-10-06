@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateUserActivity">
+    tools:context=".Controller.CreateUserActivity">
 
     <EditText
         android:id="@+id/generateuserUserNameText"
@@ -58,7 +58,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="36dp"
         android:text="Tap to generate user avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -68,14 +68,15 @@
     <Button
         android:id="@+id/createuserBackgroundColorBtn"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/colorPrimary"
         android:onClick="createuserBackgroundBtnClicked"
         android:text="GENERATE BACKGROUND COLOR"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/createuserCreateUserBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/colorPrimary"
         android:onClick="createuserCreateUserBtnClicked"
         android:text="CREATE USER"
@@ -99,8 +100,8 @@
 
     <ImageView
         android:id="@+id/createuserAvatarImageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="16dp"
         android:onClick="generateUserAvatarClicked"
         app:layout_constraintEnd_toEndOf="parent"
